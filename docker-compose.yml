@@ -1,0 +1,36 @@
+services:
+  valicrypt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: valicrypt:latest
+    container_name: valicrypt-app
+    ports:
+      - "${PORT:-8000}:${PORT:-8000}"
+    environment:
+      - PROJECT_NAME=ValiCrypt
+      - ENVIRONMENT=production
+      - DEBUG=false
+      - PORT=${PORT:-8000}
+      - HOST=0.0.0.0
+      - MAX_UPLOAD_SIZE=104857600       # 100 MB
+      - MAX_PAYLOAD_SIZE=52428800       # 50 MB
+      - ARGON2_TIME_COST=2
+      - ARGON2_MEMORY_COST=65536        # 64 MB
+      - ARGON2_PARALLELISM=4
+      - DATABASE_URL=sqlite:////app/data/valicrypt.db
+      - TEMP_DIRECTORY=/tmp/valicrypt
+    volumes:
+      - valicrypt_data:/app/data
+      - valicrypt_temp:/tmp/valicrypt
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:${PORT:-8000}/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  valicrypt_data:
+  valicrypt_temp:

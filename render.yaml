@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: valicrypt
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PROJECT_NAME
+        value: ValiCrypt
+      - key: ENVIRONMENT
+        value: production
+      - key: DEBUG
+        value: "false"
+      - key: MAX_UPLOAD_SIZE
+        value: "104857600"
+      - key: MAX_PAYLOAD_SIZE
+        value: "52428800"
+      - key: MAX_ZIP_EXTRACTED_SIZE
+        value: "104857600"
+      - key: ARGON2_TIME_COST
+        value: "2"
+      - key: ARGON2_MEMORY_COST
+        value: "65536"
+      - key: ARGON2_PARALLELISM
+        value: "4"
+      - key: DATABASE_URL
+        value: sqlite:////tmp/valicrypt.db

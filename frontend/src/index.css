@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #05020c;
+    color: #f3e8ff;
+  }
+  h1, h2, h3, .font-heading {
+    font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+  }
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Glassmorphism Cards matching the dark violet reference design */
+.glass-panel {
+  background: rgba(18, 9, 36, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(168, 85, 247, 0.16);
+  border-top: 1px solid rgba(216, 180, 254, 0.28);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(24, 12, 48, 0.85);
+  border-color: rgba(192, 132, 252, 0.4);
+  box-shadow: 0 10px 40px -10px rgba(168, 85, 247, 0.35);
+  transform: translateY(-2px);
+}
+
+.glass-card-featured {
+  background: rgba(26, 13, 52, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(192, 132, 252, 0.45);
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 50px -10px rgba(168, 85, 247, 0.5), inset 0 0 30px rgba(168, 85, 247, 0.15);
+}
+
+/* Glowing Neon Laser Beams matching the reference top of cards */
+.laser-beam {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent 0%, #a855f7 20%, #ffffff 50%, #f472b6 80%, transparent 100%);
+  box-shadow: 0 0 15px #d946ef, 0 0 30px #a855f7;
+}
+
+.laser-beam-sm {
+  height: 1.5px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent 0%, #a855f7 30%, #e879f9 50%, #a855f7 70%, transparent 100%);
+  box-shadow: 0 0 10px #c084fc;
+}
+
+/* Cyber Badge `< Label >` from reference design */
+.cyber-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.85rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #d8b4fe;
+  background: rgba(30, 15, 60, 0.65);
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  backdrop-filter: blur(12px);
+}
+
+/* Atmospheric Glowing Dome matching top of reference image */
+.ambient-dome {
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 720px;
+  height: 380px;
+  background: radial-gradient(ellipse at 50% 30%, rgba(217, 70, 239, 0.45) 0%, rgba(168, 85, 247, 0.35) 30%, rgba(126, 34, 206, 0.15) 55%, transparent 75%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Top Celestial Light Source */
+.celestial-light {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 340px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(232, 121, 249, 0.6) 35%, rgba(168, 85, 247, 0.2) 70%, transparent 100%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #05020c;
+}
+::-webkit-scrollbar-thumb {
+  background: #231145;
+  border-radius: 4px;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b1d75;
+}

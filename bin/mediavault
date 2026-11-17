@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-set -e
-PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-export PYTHONPATH="${PROJECT_ROOT}/backend:${PROJECT_ROOT}/backend/venv_libs:${PYTHONPATH}"
-export PATH="${PROJECT_ROOT}/bin:${PATH}"
-exec python3 "${PROJECT_ROOT}/backend/cli/main.py" "$@"

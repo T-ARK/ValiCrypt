@@ -5,12 +5,18 @@
 # ValiCrypt
 ### Precision Security for Modern Media • Zero-Knowledge Steganographic Carrier Platform
 
+[![Live App](https://img.shields.io/badge/Live%20App-https%3A%2F%2Fvalicrypt.onrender.com%2F-8b5cf6?style=for-the-badge&logo=render&logoColor=white)](https://valicrypt.onrender.com/)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
 [![Python: 3.11+](https://img.shields.io/badge/Python-3.11%2B-blue.svg)](https://www.python.org/)
 [![React: 18.3](https://img.shields.io/badge/React-18.3-cyan.svg)](https://react.dev/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115%2B-teal.svg)](https://fastapi.tiangolo.com/)
 [![Tests: 48 Passed](https://img.shields.io/badge/Tests-48%20Passed-brightgreen.svg)]()
-[![Deploy on Render](https://img.shields.io/badge/Render-Deployable-46E3B7.svg)](https://render.com)
+[![Deploy on Render](https://img.shields.io/badge/Render-Deployable-46E3B7.svg)](https://valicrypt.onrender.com/)
+
+<p align="center">
+  🔗 <b>Live Production URL: <a href="https://valicrypt.onrender.com/">https://valicrypt.onrender.com/</a></b>
+</p>
 
 <p align="center">
   <b>Conceal authenticated, AES-256-GCM encrypted ZIP archives and secret Unicode text inside lossless images and video containers using RFC 9106 Argon2id.</b>
@@ -167,8 +173,8 @@ ValiCrypt wraps encrypted data in a strict 92-byte binary header (`MV01`):
 
 ### Clone & Install
 ```bash
-git clone https://github.com/ark/valicrypt.git
-cd valicrypt
+git clone https://github.com/T-ARK/ValiCrypt.git
+cd ValiCrypt
 
 # Install backend dependencies
 pip install -r backend/requirements.txt
@@ -207,6 +213,8 @@ make run-frontend
 ---
 
 ## 7. Deploying to Render <a name="7-deploying-to-render"></a>
+
+> 🚀 **Live Production Application**: [https://valicrypt.onrender.com/](https://valicrypt.onrender.com/)
 
 ValiCrypt is configured out-of-the-box for seamless deployment to **Render** using either Docker or Blueprints.
 
